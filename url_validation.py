@@ -12,7 +12,7 @@ class UrlValidationResult(Enum):
 
 
 class UrlValidationErrors(Enum):
-    INVALID_URL = "URL must start with 'https://freemusicarchive.org/'"
+    INVALID_URL = "Error: URL must start with 'https://freemusicarchive.org/'"
     INVALID_PAGE = "Error: this is not a music listing page"
 
 def get_error_message(result):
