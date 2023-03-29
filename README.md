@@ -38,4 +38,4 @@ python download.py https://freemusicarchive.org/genre/Blues <output_dir> --meta
 ```
 
 ## How this was made
-You can find the implementation nodes at https://github.com/yallowraven/freemusic-downloader-notes
+You can find the implementation nodes at https://github.com/yallowraven/freemusicarchive-downloader-notes
