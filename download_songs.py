@@ -13,7 +13,7 @@ def download_songs(urls, dest):
         # remove any whitespace at the beginning or end of the url
         url = url.strip()
 
-        print('Downloading' + url)
+        print('Downloading song:' + url)
         # create a filename for the downloaded file by taking the last part of the URL
         filename = url.split('/')[-1]
 
