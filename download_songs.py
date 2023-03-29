@@ -3,7 +3,7 @@
 import os
 import urllib.request
 
-def download_songs(urls, dest):
+def download_songs(urls, dest, silent):
 
     # create the songs directory if it doesn't exist
     if not os.path.exists(dest):
@@ -13,7 +13,9 @@ def download_songs(urls, dest):
         # remove any whitespace at the beginning or end of the url
         url = url.strip()
 
-        print('Downloading song:' + url)
+        if not silent:
+            print('Downloading song: ' + url)
+            
         # create a filename for the downloaded file by taking the last part of the URL
         filename = url.split('/')[-1]
 
