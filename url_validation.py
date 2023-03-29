@@ -4,12 +4,10 @@ from urllib.parse import urlparse, urlunparse
 
 from enum import Enum
 
-
 class UrlValidationResult(Enum):
     VALID = 0
     INVALID_URL = 1
     INVALID_PAGE = 2
-
 
 class UrlValidationErrors(Enum):
     INVALID_URL = "Error: URL must start with 'https://freemusicarchive.org/'"
