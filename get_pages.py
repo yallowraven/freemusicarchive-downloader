@@ -1,4 +1,5 @@
 import argparse
+import re
 import requests
 
 parser = argparse.ArgumentParser(description='Download music from the Free Music Archive')
@@ -15,10 +16,11 @@ if not url.startswith('https://freemusicarchive.org/'):
 response = requests.get(url)
 
 if response.status_code != 200:
-    print("Failed to download music")
+    print("Failed to download music listings")
     exit()
 
-music = response.content
-# Do something with the downloaded music
+page = response.content
 
-print("Music downloaded successfully")
+if not re.search(r'<div class="play-item[^\n]*', page.decode()):
+    print("Error: this is not a music listing page")
+    exit()
