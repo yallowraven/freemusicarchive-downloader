@@ -36,3 +36,6 @@ To download all songs from the "Blues" collection on the Free Music Archive and 
 ```
 python download.py https://freemusicarchive.org/genre/Blues <output_dir> --meta
 ```
+
+## How this was made
+You can find the implementation nodes at https://github.com/yallowraven/freemusic-downloader-notes
