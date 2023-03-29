@@ -1,31 +1,12 @@
-# Thx ChatGPT
-
 import re
 
-def extract_urls(filename):
-    # open file for reading
-    with open(f'page/{filename}.html', 'r') as f:
+def extract_urls(page):
+    # compile the regex pattern
+    pattern = re.compile(r'<div class="play-item[^\n]*')
 
-        # read the contents of file
-        content = f.read()
+    # search for all matches in the page
+    matches = pattern.findall(page)
 
-        # compile the regex pattern
-        pattern = re.compile(r'<div class="play-item[^\n]*')
+    url_pattern = re.compile(r'https:\\/\\/files.freemusicarchive.org[^&]*')
 
-        # search for all matches in the content
-        matches = pattern.findall(content)
-
-        url_pattern = re.compile(r'https:\\/\\/files.freemusicarchive.org[^&]*')
-
-        # open results file for writing
-        with open(f'{filename}_urls.txt', 'w') as filtered:
-
-            # write each match to results file
-            for match in matches:
-                url = url_pattern.findall(match)[0]
-                url = url.replace('\/', '/')
-                filtered.write(url + '\n')
-
-extract_urls('breakcore1')
-extract_urls('breakcore2')
-extract_urls('breakcore3')
+    return [url_pattern.findall(match)[0].replace('\/', '/').split('"')[0] for match in matches]

@@ -1,4 +1,5 @@
 import argparse
+from extract_urls import extract_urls
 from get_pages import get_pages
 
 from url_validation import UrlValidationResult, get_error_message, validate_url
@@ -14,4 +15,4 @@ if url_validation_result != UrlValidationResult.VALID:
     print(get_error_message(url_validation_result))
     exit()
 
-print(get_pages(url))
+print(extract_urls(get_pages(url)))
