@@ -22,7 +22,7 @@ def extract_metadata(src_dir, silent, prune):
                 if title == 'Unknown Title' or author == 'Unknown Artist':
                     # print a message indicating the missing metadata
                     if not silent:
-                        print('Unknown metadata, deleting: ', filepath)
+                        print('Unknown metadata: ', filepath)
 
                     if prune:
                         # delete the file
