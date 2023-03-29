@@ -1,4 +1,5 @@
 import argparse
+from download_songs import download_songs
 from extract_urls import extract_urls
 from get_pages import get_pages
 
@@ -15,4 +16,4 @@ if url_validation_result != UrlValidationResult.VALID:
     print(get_error_message(url_validation_result))
     exit()
 
-print(extract_urls(get_pages(url)))
+download_songs(extract_urls(get_pages(url)), 'songs')
