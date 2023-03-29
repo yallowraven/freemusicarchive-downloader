@@ -31,5 +31,3 @@ def extract_metadata(src_dir, silent, prune):
                 else:
                     # write the title-author pair to the text file
                     f.write(f'{title} - {author}\n')
-
-print('Extracted title-author pairs to meta.txt.')
