@@ -16,7 +16,7 @@ This is a command-line tool for downloading music from the Free Music Archive (h
 ## Installation
 
 1. Clone this repository to your local machine.
-2. Install the required Python libraries.
+2. Install the required Python libraries: ```pip install -r requirements.txt```
 
 ## Usage
 
